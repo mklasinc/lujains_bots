@@ -44,6 +44,8 @@ app.use(bp.json());
 app.get('/chatbot', function(request, response, error){
   console.log("new request!");
   console.log(request.query);
+  var user_question = request.query.question;
+
   var obj = {str:"hello"}
 	response.json(JSON.stringify(obj));
 });

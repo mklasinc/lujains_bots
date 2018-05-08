@@ -4,7 +4,7 @@ function ajax_call(q){
   	data: {
   		question: q
   	},
-  	type: 'GET',
+  	type: 'POST',
   	dataType: 'json',
 		error: function(data){
 			// console.log(data);
@@ -13,6 +13,7 @@ function ajax_call(q){
   	success: function(data){
 			console.log("WOHO we got data back!");
 			console.log(data);
+
     }
   });
 };
@@ -24,6 +25,7 @@ $(window).on('load',function(){
   // grab the submit button
 	var $submit_button = $('#submit_button');
 
+
   // when the submit button is clicked send data to the server side
 	$submit_button.click(function(){
     console.log("we have been clicked!");
@@ -31,4 +33,5 @@ $(window).on('load',function(){
 	  console.log(chatbot_question);
 	  ajax_call(chatbot_question);
 	});
+
 });
